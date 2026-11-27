@@ -4,141 +4,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARVÉLO | BE DIFFERENT</title>
+<title>ARVÉLO | Own Your Edge</title>
+<meta name="description" content="ARVÉLO — Details that make a difference.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{
-margin:0;
-background:#f5f5f3;
-color:#171717;
-font-family:Arial,Tahoma,sans-serif
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#11110f;--gold:#b69b6b;--cream:#f5f3ed;--white:#fff}
+body{font-family:'Cairo',sans-serif;background:var(--cream);color:var(--black)}
+a{text-decoration:none;color:inherit}
+header{height:85px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+.logo{font:700 29px 'DM Sans';letter-spacing:5px;direction:ltr}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:30px}
+nav a{font-size:13px;color:#555;transition:.3s}
+nav a:hover{color:var(--gold)}
+.header-btn,.btn{background:var(--black);color:#fff;padding:13px 25px;font-size:12px;display:inline-block;transition:.3s;border:1px solid var(--black)}
+.header-btn:hover,.btn:hover{background:var(--gold);border-color:var(--gold)}
+.hero{min-height:620px;background:var(--black);color:white;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:70px 9%;gap:40px}
+.hero-content{direction:ltr;text-align:left}
+.tag{font:600 10px 'DM Sans';letter-spacing:4px;color:var(--gold)}
+.hero h1{font:400 clamp(55px,7vw,90px) Georgia;line-height:.98;margin:25px 0;letter-spacing:-3px}
+.hero p{font-size:13px;line-height:2;color:#aaa;max-width:390px;margin-bottom:30px;direction:rtl;text-align:right}
+.hero-image{height:450px;background:linear-gradient(140deg,#38352e,#171714 65%);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-image:before{content:"ARVÉLO";font:700 clamp(45px,7vw,85px) 'DM Sans';letter-spacing:9px;color:rgba(255,255,255,.08)}
+.hero-image:after{content:"";position:absolute;width:65%;height:70%;border:1px solid #b69b6b88;transform:rotate(-12deg)}
+.hero-caption{position:absolute;bottom:25px;color:var(--gold);font:10px 'DM Sans';letter-spacing:4px}
+.section{padding:85px 8%}
+.heading{text-align:center;margin-bottom:40px}
+.heading small{font:600 10px 'DM Sans';letter-spacing:4px;color:var(--gold)}
+.heading h2{font:400 43px Georgia;margin:14px 0}
+.heading p{font-size:13px;color:#888}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border:1px solid #e9e6df;transition:.3s}
+.card:hover{transform:translateY(-7px);box-shadow:0 15px 35px #0000000d}
+.product-photo{height:300px;background:linear-gradient(140deg,#eae7df,#d8d3c7);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.product-photo span{font:11px 'DM Sans';letter-spacing:3px;color:#777;z-index:0}
+.card-info{padding:22px}
+.card-info h3{font:400 23px Georgia}
+.card-info p{font-size:12px;color:#888;margin:12px 0}
+.card-info strong{font-size:15px}
+.details{display:inline-block;margin-top:18px;border-bottom:1px solid var(--gold);font:11px 'DM Sans';letter-spacing:1px;padding-bottom:5px}
+.offer{background:#e9e5db;text-align:center;padding:75px 20px}
+.offer small{font:600 10px 'DM Sans';letter-spacing:4px;color:#987c4d}
+.offer h2{font:400 clamp(35px,5vw,52px) Georgia;margin:18px 0}
+.offer p{font-size:13px;color:#777}
+.offer-price{font:700 48px 'DM Sans';margin:20px 0}
+.offer-price span{font:400 15px 'Cairo'}
+.offer .btn{margin-top:15px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.story-image{height:380px;background:linear-gradient(145deg,#d8d3c8,#f1eee6);display:flex;align-items:center;justify-content:center;font:italic 200px Georgia;color:#ffffff99}
+.story h2{font:400 47px Georgia;margin:15px 0}
+.story p{font-size:13px;line-height:2.2;color:#777;margin-bottom:20px}
+.contact{text-align:center;background:white;padding:55px 20px}
+.contact h2{font:400 35px Georgia;margin-bottom:12px}
+.contact p{font-size:13px;color:#888;margin-bottom:22px}
+footer{background:#11110f;color:white;padding:40px 8% 20px}
+.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer p{color:#999;font-size:12px;margin-top:12px;line-height:2}
+.copyright{border-top:1px solid #333;margin-top:35px;padding-top:20px;color:#777;font:10px 'DM Sans';letter-spacing:2px;direction:ltr}
+@media(max-width:800px){
+.hero{grid-template-columns:1fr;padding:65px 7%}
+.hero-image{height:300px}
+.products{grid-template-columns:repeat(2,1fr)}
+.story{gap:25px}
 }
-header{
-padding:22px 7%;
-background:white;
-border-bottom:1px solid #ddd;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:15px
+@media(max-width:560px){
+header{padding:0 5%;height:72px}
+.logo{font-size:22px;letter-spacing:3px}
+nav{gap:13px}
+nav a{font-size:11px}
+.header-btn{display:none}
+.hero{padding:55px 6%}
+.hero h1{font-size:57px}
+.hero-image{height:240px}
+.section{padding:60px 5%}
+.heading h2{font-size:34px}
+.products{grid-template-columns:1fr}
+.product-photo{height:290px}
+.story{grid-template-columns:1fr}
+.story-image{height:260px}
 }
-.logo{
-font-size:30px;
-font-weight:900;
-letter-spacing:5px;
-direction:ltr
-}
-nav a{
-color:#171717;
-text-decoration:none;
-margin:0 8px;
-font-size:14px
-}
-main{max-width:1000px;margin:auto;padding:35px 20px}
-.hero{text-align:center;padding:45px 10px}
-.hero h1{
-font-size:clamp(38px,8vw,65px);
-letter-spacing:6px;
-margin:0;
-direction:ltr
-}
-.hero p{color:#777;letter-spacing:3px;direction:ltr}
-.offer{
-background:white;
-border:1px solid #ddd;
-text-align:center;
-padding:35px 20px;
-margin:20px auto;
-max-width:700px
-}
-.eyebrow{font-size:12px;letter-spacing:4px;color:#777;direction:ltr}
-.offer h2{font-size:30px;margin:15px 0}
-.price{font-size:48px;font-weight:bold;margin:15px}
-.price small{font-size:17px;font-weight:normal}
-.shipping{color:#555;margin-bottom:20px}
-.btn{
-display:inline-block;
-background:#171717;
-color:white;
-text-decoration:none;
-padding:14px 25px;
-margin:5px
-}
-.contact{
-text-align:center;
-background:white;
-border:1px solid #ddd;
-padding:25px;
-margin-top:30px
-}
-.phone{
-font-size:22px;
-font-weight:bold;
-direction:ltr
-}
-footer{text-align:center;color:#777;padding:30px}
 </style>
 </head>
 
 <body>
 
 <header>
-<div class="logo">ARVÉLO</div>
+<a href="index.html" class="logo">ARV<span>É</span>LO</a>
 <nav>
-<a href="index.html">العروض</a>
+<a href="index.html">الرئيسية</a>
 <a href="products.html">المنتجات</a>
+<a href="#offer">العروض</a>
 </nav>
+<a class="header-btn" href="https://wa.me/201042295564">تواصل معنا</a>
 </header>
 
 <main>
-
 <section class="hero">
-<h1>OWN YOUR EDGE</h1>
-<p>DETAILS THAT MAKE A DIFFERENCE</p>
+<div class="hero-content">
+<div class="tag">A DIFFERENT POINT OF VIEW</div>
+<h1>OWN<br>YOUR EDGE.</h1>
+<p>اختيارات بتفاصيل مختلفة. اكتشف مجموعة ARVÉLO المصممة عشان تضيف لمستك الخاصة.</p>
+<a class="btn" href="products.html">اكتشف المجموعة</a>
+</div>
+<div class="hero-image">
+<div class="hero-caption">DETAILS THAT MAKE A DIFFERENCE</div>
+</div>
 </section>
 
-<section class="offer">
-<div class="eyebrow">ELVOR DUO OFFER</div>
-<h2>عرض اتنين بيرفيوم</h2>
-<p>بيرفيومين في عرض واحد</p>
-
-<div class="price">899 <small>جنيه</small></div>
-
-<div class="shipping">
-السعر شامل الشحن لجميع المحافظات
+<section class="section">
+<div class="heading">
+<small>THE COLLECTION</small>
+<h2>Selected for your style.</h2>
+<p>اكتشف اختيارات ARVÉLO</p>
 </div>
 
-<a class="btn"
-href="https://wa.me/201042295564?text=عايز%20أطلب%20عرض%20اتنين%20بيرفيوم%20بـ899%20جنيه"
-target="_blank">
-اطلب العرض
+<div class="products">
+<article class="card">
+<a href="gift-set.html">
+<div class="product-photo">
+<span>GIFT SET</span>
+<img src="images/gift-set.jpg" alt="Gift Set" onerror="this.style.display='none'">
+</div>
 </a>
+<div class="card-info">
+<h3>Gift Set</h3>
+<p>طقم هدية مميز</p>
+<strong>579 EGP</strong><br>
+<a class="details" href="gift-set.html">VIEW DETAILS ↗</a>
+</div>
+</article>
+
+<article class="card">
+<a href="urban-bag.html">
+<div class="product-photo">
+<span>URBAN BAG</span>
+<img src="images/urban-bag.jpg" alt="Urban Bag" onerror="this.style.display='none'">
+</div>
+</a>
+<div class="card-info">
+<h3>Urban Bag</h3>
+<p>شنطة عملية للاستخدام اليومي</p>
+<strong>519 EGP</strong><br>
+<a class="details" href="urban-bag.html">VIEW DETAILS ↗</a>
+</div>
+</article>
+
+<article class="card">
+<a href="perfume.html">
+<div class="product-photo">
+<span>PERFUME</span>
+<img src="images/perfume.jpg" alt="Perfume" onerror="this.style.display='none'">
+</div>
+</a>
+<div class="card-info">
+<h3>Perfume</h3>
+<p>اكتشف تفاصيل العطر والعرض الخاص</p>
+<strong>739 EGP</strong><br>
+<a class="details" href="perfume.html">VIEW DETAILS ↗</a>
+</div>
+</article>
+</div>
 </section>
 
-<section style="text-align:center;padding:20px">
-<h2>اكتشف باقي منتجاتنا</h2>
-<p>شوف مجموعة منتجات ELVOR</p>
-<a class="btn" href="products.html">تصفح المنتجات</a>
+<section class="offer" id="offer">
+<small>EXCLUSIVE OFFER</small>
+<h2>Two perfumes. One special offer.</h2>
+<p>عرض اتنين بيرفيوم</p>
+<div class="offer-price">899 <span>جنيه</span></div>
+<p>السعر شامل الشحن لجميع المحافظات</p>
+<a class="btn" href="https://wa.me/201042295564?text=عايز%20أطلب%20عرض%20اتنين%20بيرفيوم%20بـ899%20جنيه">اطلب العرض</a>
+</section>
+
+<section class="section story">
+<div class="story-image">A</div>
+<div>
+<div class="tag">THE ARVÉLO MOOD</div>
+<h2>Less, but<br>better.</h2>
+<p>في ARVÉLO بنؤمن إن التفاصيل الصغيرة هي اللي بتفرق. اختيارات عملية، شكل مميز، وتجربة شراء بسيطة وواضحة.</p>
+<a href="products.html" class="details">EXPLORE THE COLLECTION ↗</a>
+</div>
 </section>
 
 <section class="contact">
-<h2>للطلب والاستفسار</h2>
-<p>تواصل معنا مباشرة</p>
-<p class="phone">01042295564</p>
-
-<a class="btn"
-href="https://wa.me/201042295564"
-target="_blank">
-تواصل معنا على واتساب
-</a>
+<h2>Let’s make it yours.</h2>
+<p>للطلب والاستفسار، تواصل معنا مباشرة.</p>
+<a class="btn" href="https://wa.me/201042295564">تواصل عبر واتساب</a>
 </section>
-
 </main>
 
 <footer>
-ELVOR © 2026
+<div class="footer-top">
+<div>
+<div class="logo">ARV<span>É</span>LO</div>
+<p>DETAILS THAT MAKE A DIFFERENCE.</p>
+</div>
+<div>
+<p>المنتجات<br><a href="products.html">اكتشف المجموعة</a></p>
+</div>
+<div>
+<p>الطلبات والاستفسارات<br><a href="https://wa.me/201042295564">واتساب: 01042295564</a></p>
+</div>
+</div>
+<div class="copyright">ARVÉLO © 2026 — ALL RIGHTS RESERVED</div>
 </footer>
 
 </body>
