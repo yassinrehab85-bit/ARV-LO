@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gift Set | ARVÉLO</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#f8f7f4;color:#171717;font-family:'Cairo',sans-serif}
+header{height:78px;background:#111;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #b99b61}
+.logo{font-family:'Playfair Display',serif;font-size:27px;letter-spacing:3px;color:#d2b77e;text-decoration:none}
+nav a{color:#eee;text-decoration:none;margin-right:24px;font-size:13px}
+.container{max-width:1100px;margin:65px auto;padding:0 22px}
+.product{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.photo{background:#eeece7;min-height:430px;display:flex;align-items:center;justify-content:center;border:1px solid #e4dfd5}
+.photo img{width:100%;height:430px;object-fit:contain}
+.placeholder{color:#777;text-align:center;padding:30px}
+.eyebrow{color:#a4874d;letter-spacing:3px;font-size:12px}
+h1{font-size:36px;margin:12px 0;font-weight:600}
+.desc{color:#777;line-height:2;margin:15px 0 24px;font-size:14px}
+.price{font-size:27px;font-weight:700;margin-bottom:22px}
+.price small{font-size:13px;color:#777;font-weight:400}
+.line{height:1px;background:#ddd;margin:25px 0}
+h3{font-size:15px;margin-bottom:12px}
+.details{color:#777;font-size:13px;line-height:2.2}
+.offer{background:#171717;color:#fff;padding:19px 20px;margin:25px 0}
+.offer strong{color:#d2b77e}
+.offer p{font-size:13px;margin-top:5px;color:#ddd}
+.btn{display:block;background:#171717;color:#fff;text-align:center;padding:15px;text-decoration:none;margin-top:20px;transition:.2s}
+.btn:hover{background:#a4874d}
+.back{display:inline-block;color:#8d7547;text-decoration:none;font-size:13px;margin-bottom:30px}
+footer{background:#111;color:#aaa;text-align:center;padding:30px;font-size:12px;margin-top:80px}
+@media(max-width:700px){header{padding:0 18px}nav a{margin-right:10px;font-size:11px}.product{grid-template-columns:1fr;gap:30px}.photo{min-height:300px}.photo img{height:300px}h1{font-size:29px}.container{margin:35px auto}}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="index.html">ARVÉLO</a>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="products.html">المنتجات</a>
+</nav>
+</header>
+
+<main class="container">
+<a class="back" href="products.html">← العودة للمنتجات</a>
+<section class="product">
+<div class="photo">
+<img src="images/gift-set.jpg" alt="ARVÉLO Gift Set" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+<div class="placeholder" style="display:none">صورة المنتج ستظهر هنا بعد رفعها</div>
+</div>
+
+<div>
+<p class="eyebrow">ARVÉLO COLLECTION</p>
+<h1>Gift Set</h1>
+<p class="desc">مجموعة هدايا مختارة بعناية من ARVÉLO، بتقديم أنيق يناسب الإهداء ويضيف لمسة مميزة لمناسباتك.</p>
+
+<div class="price">579 جنيه <small>شامل الشحن</small></div>
+
+<div class="line"></div>
+<h3>تفاصيل المنتج</h3>
+<p class="details">
+مجموعة هدايا بتصميم أنيق.<br>
+اختيار مناسب لتقديم هدية مميزة.<br>
+تغليف وتقديم يهتمان بالتفاصيل.
+</p>
+
+<div class="offer">
+<strong>تسوق بثقة مع ARVÉLO</strong>
+<p>السعر الموضح شامل الشحن.</p>
+</div>
+
+<a class="btn" href="https://wa.me/201042295564?text=مرحباً،%20أرغب%20في%20طلب%20Gift%20Set%20من%20ARV%C3%89LO%20بسعر%20579%20جنيه">اطلب الآن عبر واتساب</a>
+</div>
+</section>
+</main>
+
+<footer>ARVÉLO — Elegance in Every Detail</footer>
+</body>
+</html>
