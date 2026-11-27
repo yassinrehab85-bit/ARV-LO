@@ -2,218 +2,147 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARVÉLO | Products</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARVÉLO | Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-    }
-
-    header {
-      background: #fff;
-      padding: 22px 15px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .logo {
-      font-size: 32px;
-      letter-spacing: 5px;
-      font-weight: bold;
-    }
-
-    header p {
-      font-size: 11px;
-      letter-spacing: 3px;
-      margin-top: 7px;
-      color: #777;
-    }
-
-    nav {
-      margin-top: 18px;
-    }
-
-    nav a {
-      color: #333;
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 14px;
-    }
-
-    .intro {
-      text-align: center;
-      padding: 45px 15px 25px;
-    }
-
-    .intro h1 {
-      font-size: 29px;
-      letter-spacing: 3px;
-    }
-
-    .intro p {
-      color: #777;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .products {
-      max-width: 1000px;
-      margin: auto;
-      padding: 15px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 22px;
-    }
-
-    .product {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      padding: 15px;
-      text-align: center;
-      border-radius: 5px;
-    }
-
-    .product-image {
-      height: 210px;
-      background: #eee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      margin-bottom: 18px;
-      font-size: 14px;
-    }
-
-    .product h2 {
-      font-size: 19px;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    .description {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 15px;
-    }
-
-    .order {
-      display: block;
-      background: #222;
-      color: white;
-      padding: 12px;
-      text-decoration: none;
-      border-radius: 3px;
-      margin-top: 12px;
-    }
-
-    .contact {
-      background: #fff;
-      text-align: center;
-      padding: 30px 15px;
-      margin-top: 35px;
-      border-top: 1px solid #ddd;
-    }
-
-    .contact p {
-      margin: 12px 0;
-    }
-
-    .contact a {
-      color: #222;
-    }
-
-    footer {
-      background: #222;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 12px;
-    }
-  </style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#11110f;--gold:#b69b6b;--cream:#f5f3ed}
+body{background:var(--cream);color:var(--black);font-family:'Cairo',sans-serif}
+a{text-decoration:none;color:inherit}
+header{height:85px;background:white;display:flex;align-items:center;justify-content:space-between;padding:0 7%;border-bottom:1px solid #eee}
+.logo{font:700 29px 'DM Sans';letter-spacing:5px;direction:ltr}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:30px}
+nav a{font-size:13px;color:#555}
+nav a:hover{color:var(--gold)}
+.top{background:#11110f;color:white;text-align:center;padding:75px 20px}
+.top small{font:600 10px 'DM Sans';letter-spacing:4px;color:var(--gold)}
+.top h1{font:400 clamp(45px,7vw,72px) Georgia;margin:15px 0}
+.top p{font-size:13px;color:#aaa}
+.container{max-width:1150px;margin:auto;padding:65px 20px}
+.filters{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;gap:15px}
+.filters p{font-size:12px;color:#777}
+.filters span{font:11px 'DM Sans';letter-spacing:2px;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:white;border:1px solid #e8e5de;transition:.3s}
+.card:hover{transform:translateY(-6px);box-shadow:0 15px 35px #0000000c}
+.photo{height:330px;background:linear-gradient(140deg,#eae7df,#d8d3c7);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.photo img{position:absolute;width:100%;height:100%;object-fit:cover;inset:0}
+.photo span{font:11px 'DM Sans';letter-spacing:4px;color:#777;z-index:0}
+.info{padding:23px}
+.info-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.info h2{font:400 24px Georgia}
+.price{font-weight:700;font-size:14px;white-space:nowrap}
+.info p{font-size:12px;color:#888;margin:13px 0 20px;line-height:2}
+.link{font:11px 'DM Sans';letter-spacing:1px;border-bottom:1px solid var(--gold);padding-bottom:5px}
+.offer{background:#e9e5db;text-align:center;padding:55px 20px;margin-top:65px}
+.offer small{font:600 10px 'DM Sans';letter-spacing:4px;color:#987c4d}
+.offer h2{font:400 38px Georgia;margin:14px 0}
+.offer p{font-size:13px;color:#777}
+.offer strong{display:block;font:700 45px 'DM Sans';margin:18px}
+.btn{display:inline-block;background:#11110f;color:white;padding:13px 25px;font-size:12px;margin-top:12px}
+footer{background:#11110f;color:white;padding:35px 7%;text-align:center}
+footer p{color:#888;font:10px 'DM Sans';letter-spacing:2px;margin-top:12px}
+@media(max-width:750px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){header{padding:0 5%;height:72px}.logo{font-size:22px;letter-spacing:3px}nav{gap:13px}nav a{font-size:11px}.grid{grid-template-columns:1fr}.photo{height:300px}.container{padding:45px 15px}.info h2{font-size:22px}.offer h2{font-size:30px}}
+</style>
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">ELVOR</div>
-    <p>BE DIFFERENT.</p>
+<header>
+<a href="index.html" class="logo">ARV<span>É</span>LO</a>
+<nav>
+<a href="index.html">الرئيسية</a>
+<a href="products.html">المنتجات</a>
+<a href="index.html#offer">العروض</a>
+</nav>
+</header>
 
-    <nav>
-      <a href="index.html">العروض</a>
-      <a href="products.html">المنتجات</a>
-    </nav>
-  </header>
+<section class="top">
+<small>THE ARVÉLO COLLECTION</small>
+<h1>OUR PRODUCTS.</h1>
+<p>اكتشف المجموعة وتعرّف على تفاصيل كل منتج.</p>
+</section>
 
-  <section class="intro">
-    <h1>OUR PRODUCTS</h1>
-    <p>Discover the ELVOR collection.</p>
-  </section>
+<main class="container">
+<div class="filters">
+<p>اختيارات ARVÉLO المتاحة</p>
+<span>01 — 03</span>
+</div>
 
-  <main class="products">
+<div class="grid">
 
-    <article class="product">
-      <div class="product-image">صورة الشنطة</div>
-      <h2>Everyday Bag</h2>
-      <p class="description">شنطة عملية للاستخدام اليومي</p>
-      <div class="price">519 EGP</div>
-      <a class="order"
-         href="https://wa.me/201042295564?text=عايز%20أطلب%20الشنطة">
-        اطلب الآن
-      </a>
-    </article>
+<article class="card">
+<a href="gift-set.html">
+<div class="photo">
+<span>GIFT SET</span>
+<img src="images/gift-set.jpg" alt="Gift Set" onerror="this.style.display='none'">
+</div>
+</a>
+<div class="info">
+<div class="info-top">
+<h2>Gift Set</h2>
+<div class="price">579 EGP</div>
+</div>
+<p>طقم هدية مميز من مجموعة ARVÉLO.</p>
+<a class="link" href="gift-set.html">VIEW DETAILS ↗</a>
+</div>
+</article>
 
-    <article class="product">
-      <div class="product-image">صورة طقم الهدية</div>
-      <h2>Gift Set</h2>
-      <p class="description">طقم هدية مميز</p>
-      <div class="price">579 EGP</div>
-      <a class="order"
-         href="https://wa.me/201042295564?text=عايز%20أطلب%20طقم%20الهدية">
-        اطلب الآن
-      </a>
-    </article>
+<article class="card">
+<a href="urban-bag.html">
+<div class="photo">
+<span>URBAN BAG</span>
+<img src="images/urban-bag.jpg" alt="Urban Bag" onerror="this.style.display='none'">
+</div>
+</a>
+<div class="info">
+<div class="info-top">
+<h2>Urban Bag</h2>
+<div class="price">519 EGP</div>
+</div>
+<p>شنطة عملية للاستخدام اليومي.</p>
+<a class="link" href="urban-bag.html">VIEW DETAILS ↗</a>
+</div>
+</article>
 
-    <article class="product">
-      <div class="product-image">صورة البيرفيوم</div>
-      <h2>Perfume Duo</h2>
-      <p class="description">عرض قطعتين بيرفيوم</p>
-      <div class="price">899 EGP</div>
-      <p class="description">السعر شامل الشحن لجميع المحافظات</p>
-      <a class="order"
-         href="https://wa.me/201042295564?text=عايز%20أطلب%20عرض%20اتنين%20بيرفيوم%20بـ899%20جنيه">
-        اطلب العرض
-      </a>
-    </article>
+<article class="card">
+<a href="perfume.html">
+<div class="photo">
+<span>PERFUME</span>
+<img src="images/perfume.jpg" alt="Perfume" onerror="this.style.display='none'">
+</div>
+</a>
+<div class="info">
+<div class="info-top">
+<h2>Perfume</h2>
+<div class="price">739 EGP</div>
+</div>
+<p>العطر متاح منفردًا أو ضمن عرض القطعتين.</p>
+<a class="link" href="perfume.html">VIEW DETAILS ↗</a>
+</div>
+</article>
 
-  </main>
+</div>
 
-  <section class="contact">
-    <h2>CONTACT ELVOR</h2>
-    <p>للطلب والاستفسار</p>
-    <p>01042295564</p>
-    <a href="https://wa.me/201042295564">
-      تواصل معنا على واتساب
-    </a>
-  </section>
+<section class="offer">
+<small>EXCLUSIVE OFFER</small>
+<h2>Perfume Duo</h2>
+<p>قطعتان بيرفيوم في عرض واحد</p>
+<strong>899 EGP</strong>
+<p>السعر شامل الشحن لجميع المحافظات</p>
+<a class="btn" href="perfume.html">اكتشف العرض</a>
+</section>
+</main>
 
-  <footer>
-    ELVOR © 2026 — ALL RIGHTS RESERVED
-  </footer>
+<footer>
+<div class="logo">ARV<span>É</span>LO</div>
+<p>DETAILS THAT MAKE A DIFFERENCE.</p>
+<p>ARVÉLO © 2026 — ALL RIGHTS RESERVED</p>
+</footer>
 
 </body>
 </html>
